@@ -61,4 +61,4 @@ app.listen(3000);
 
 ## License
 
-    MIT
+- [MIT](http://spdx.org/licenses/MIT)
