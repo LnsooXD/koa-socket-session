@@ -10,7 +10,12 @@
   },
   "keywords": [
     "session",
+    "cookie",
     "koa",
+    "koa v2",
+    "socket.io",
+    "web sockets",
+    "websocket"
     "koa-socket"
   ],
   "main": "session.js",
