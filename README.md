@@ -19,7 +19,7 @@ var app = koa();
 var io = IO();
 // init session
 var session = koaSession({
-	store: new RedisStore({...}),
+    store: new RedisStore({...}),
 	secret: '...',
 	resave: true,
 	saveUninitialized: true
@@ -53,4 +53,9 @@ app.listen(3000);
 
 ```
 ##Authors
-        [LnsooXD](https://github.com/LnsooXD)
+
+- [LnsooXD](https://github.com/LnsooXD)
+
+## License
+
+    MIT
