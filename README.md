@@ -4,7 +4,10 @@ koa-socket-session is a session middleware for [mattstyles/koa-socket](https://g
  can share session between koa app and koa-socket.
  
 ##Installation
-        npm install koa-socket-session
+
+```shell
+$ npm install koa-socket-session
+```
 
 ##Example
 
