@@ -1,4 +1,12 @@
 "use strict";
+
+/*!
+ * koa-socket-session
+ * Copyright(c) 2016 LnsooXD
+ * MIT Licensed
+ */
+
+
 const co = require('co');
 const Cookies = require('cookies');
 
