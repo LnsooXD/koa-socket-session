@@ -15,7 +15,7 @@
     "koa v2",
     "socket.io",
     "web sockets",
-    "websocket"
+    "websocket",
     "koa-socket"
   ],
   "main": "session.js",
