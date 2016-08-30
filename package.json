@@ -1,6 +1,6 @@
 {
   "name": "koa-socket-session",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Middleware for koa-socket session support",
   "author": "LnsooXD <lnsooxd@gmail.com>",
   "license": "MIT",

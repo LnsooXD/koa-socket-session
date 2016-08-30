@@ -14,7 +14,6 @@ exports = module.exports = function session(app, session) {
 	return wrap(function *(ctx, next) {
 		if (!ctx.session) {
 			let handshake = addCookiesFuncs(ctx.socket.socket.handshake);
-			console.log('ctx.socket.socket.handshake: ', ctx.socket.socket.handshake);
 			ctx.url = handshake.url;
 			if (!ctx.cookies) {
 				ctx.cookies = new Cookies(handshake, handshake, {
