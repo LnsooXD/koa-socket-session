@@ -13,7 +13,8 @@ const Cookies = require('cookies');
 exports = module.exports = function session(app, session) {
 	return wrap(function *(ctx, next) {
 		if (!ctx.session) {
-			let handshake = ctx.socket.socket.handshake;
+			let handshake = addCookiesFuncs(ctx.socket.socket.handshake);
+			console.log('ctx.socket.socket.handshake: ', ctx.socket.socket.handshake);
 			ctx.url = handshake.url;
 			if (!ctx.cookies) {
 				ctx.cookies = new Cookies(handshake, handshake, {
@@ -38,4 +39,15 @@ function wrap(middleware) {
 }
 
 function *nup() {
+}
+
+function addCookiesFuncs(handshake) {
+	handshake.getHeader = function (key) {
+		return this.headers[key];
+	}.bind(handshake);
+
+	handshake.setHeader = function(key, value) {
+		this.headers[key] = value;
+	}.bind(handshake);
+	return handshake;
 }
