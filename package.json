@@ -21,8 +21,8 @@
   "main": "session.js",
   "scripts": {},
   "dependencies": {
-    "co": "^4.6.0",
-    "cookies": "^0.6.1"
+    "cookies": "^0.6.1",
+    "not-type-of": "^1.0.1"
   },
   "devDependencies": {},
   "engines": {

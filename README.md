@@ -1,7 +1,7 @@
 #Koa-socket-session
 ***
-koa-socket-session is a session middleware for [mattstyles/koa-socket](https://github.com/mattstyles/koa-socket#koa-socket).It
- can share session between koa app and koa-socket.
+koa-socket-session is a session middleware for [LnsooXD/koa-socket.io](https://github.com/LnsooXD/koa-socket.io).It
+ can share session between koa app and koa-socket.io.
  
 ##Installation
 
@@ -16,7 +16,8 @@ var koa = require('koa');
 var RedisStore = require('koa-redis');
 var koaSession = require('koa-generic-session');
 var koaSocketSession require('koa-socket-session');
-var IO = require('koa-socket');
+var IO = require('koa-socket.io');
+const http = require('http');
 
 var app = koa();
 var io = IO();
@@ -43,8 +44,9 @@ io.on( 'message', ( ctx, data ) => {
   console.log( `message: ${ data }, username: ${username}` )
 });
 
+let server = http.createServer(app.callback());
 
-io.attach(app);
+io.start(server);
 
 app.use(function *() {
   // set username in session to 'LnsooXD'
@@ -52,7 +54,7 @@ app.use(function *() {
   this.body = 'Hello World';
 });
 
-app.listen(3000);
+server.listen(3000);
 
 ```
 ##Authors
