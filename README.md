@@ -11,25 +11,36 @@ $ npm install koa-socket-session
 
 ##Example
 
+> A chat room example can be found under example dir.
+
 ```js
 var koa = require('koa');
-var RedisStore = require('koa-redis');
-var koaSession = require('koa-generic-session');
+var koaSession = require('koa-session');
 var koaSocketSession require('koa-socket-session');
 var IO = require('koa-socket.io');
 const http = require('http');
 
 var app = koa();
 var io = IO();
+
+const CONFIG = {
+    key: 'koa:sess', /** (string) cookie key (default is koa:sess) */
+    maxAge: 86400000, /** (number) maxAge in ms (default is 1 days) */
+    overwrite: true, /** (boolean) can overwrite or not (default true) */
+    httpOnly: true, /** (boolean) httpOnly or not (default true) */
+    signed: true, /** (boolean) signed or not (default true) */
+};
+
+app.keys = ['some secret hurr'];
+
 // init session
 var session = koaSession({
-    store: new RedisStore({...}),
 	secret: '...',
 	resave: true,
 	saveUninitialized: true
 });
 
-// add session for app
+const session = KoaSession(CONFIG, app);
 app.use(session);
 
 app.use( ... );
