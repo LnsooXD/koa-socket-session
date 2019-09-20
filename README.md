@@ -1,6 +1,6 @@
 # Koa-socket-session
 
-# Deprecated: This project is out-of-date and it has some problems of security.
+### Deprecated: This project is out-of-date and it has some problems of security.
 
 ***
 koa-socket-session is a session middleware for [LnsooXD/koa-socket.io](https://github.com/LnsooXD/koa-socket.io).It
